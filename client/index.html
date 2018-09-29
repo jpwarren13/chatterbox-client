@@ -29,22 +29,19 @@
       <!-- Your HTML goes here! -->
       <span>
       <p>Room:</p>
-      <select class="room-menu">
-        <option>
-          test lobby
-        </option>
-        <option>
-          2nd lobby
-        </option>
+      <select id="roomSelect">
+
       </select>
       <div>
-        <form>
+        <form onsubmit="return false">
       <input type="text" class="message-input">
-      <span><button type="submit" class="submit-button">Submit</button></span>
+      <span><button type="submit" class="submit-button" >Submit</button></span>
       </form>
       </div>
     </span>
     </div>
+    <script>
+    </script>
     <div id="chats"></div>
   </body>
 </html>
