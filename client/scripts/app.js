@@ -32,35 +32,35 @@ class App  {
   };
   // submits a GET request using $.ajax
   fetch(n){
-    let messageGET = $.get( "http://parse.atx.hackreactor.com/chatterbox/classes/messages", function( data ) {
-      });
-      let messages = messageGET.responseJSON;
-      return messages[n];
-    // $.ajax({
-    //     // This is the url you should use to communicate with the parse API server.
-    //     url: 'http://parse.atx.hackreactor.com/chatterbox/classes/messages',
-    //     type: 'GET',
-    //     datatype: jsonp,
-    //     contentType: 'application/jsonp',
-    //     success: function (data) {
-    //     console.log('chatterbox: Message recieved');
-    //     },
-    //     error: function (data) {
-    //     // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
-    //     console.error('chatterbox: Failed to retrieve message');
-    //     }
-    // });
-
+ 
+    let f = $.ajax({
+        // This is the url you should use to communicate with the parse API server.
+        url: 'http://parse.atx.hackreactor.com/chatterbox/classes/messages',
+        type: 'GET',
+        datatype:'jsonp',
+        contentType: 'application/jsonp',
+        success: function (data) {
+        console.log('chatterbox: Message recieved');
+        },
+        error: function (data) {
+        // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+        console.error('chatterbox: Failed to retrieve message');
+        }
+    });
+    //setTimeout(null, 1000);
+return f;
   };
   // clears messages from the DOM
   clearMessages(){
-
+$('#chats').empty();
 
   };
   
   // adds message to the DOM
-  renderMessage(messageToRender){
+  renderMessage(message){
+//et data = this.fetch();
 
+ $('#chats').append('<div class="chat">'+JSON.stringify(message.text)+ '</div>');
 
       //get message to render
       //

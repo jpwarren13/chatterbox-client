@@ -7,8 +7,9 @@
 
     <!-- dependencies -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script>
-      // YOU DO NOT NEED TO EDIT THIS CODE
+    <script src ="bower_components/underscore/underscore.js"></script>
+     <!-- // YOU DO NOT NEED TO EDIT THIS CODE-->
+     <script>
       if (!/(&|\?)username=/.test(window.location.search)) {
         var newSearch = window.location.search;
         if (newSearch !== '' & newSearch !== '?') {
@@ -44,6 +45,6 @@
       </div>
     </span>
     </div>
-    <div class="chats"></div>
+    <div id="chats"></div>
   </body>
 </html>
